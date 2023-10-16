@@ -1,0 +1,39 @@
+<?
+$aMenuLinks = Array(
+    Array(
+        "Гарантії",
+        "/ua/about/guaranty/",
+        Array(),
+        Array(),
+        ""
+    ),
+    Array(
+        "Оплата",
+        "/ua/about/pay/",
+        Array(),
+        Array(),
+        ""
+    ),
+    Array(
+        "Доставка",
+        "/ua/about/delivery/",
+        Array(),
+        Array(),
+        ""
+    ),
+    Array(
+        "Контакти",
+        "/ua/about/contacts/",
+        Array(),
+        Array(),
+        ""
+    ),
+    Array(
+        "3D Моделі",
+        "/ua/3d_model/",
+        Array(),
+        Array(),
+        ""
+    )
+)
+?>

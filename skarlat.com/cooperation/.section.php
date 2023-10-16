@@ -1,0 +1,5 @@
+<?
+$sSectionName = "Coopertaion";
+$arDirProperties = Array(
+);
+?>

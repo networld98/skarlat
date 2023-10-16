@@ -1,0 +1,17 @@
+Options -Indexes 
+
+RewriteEngine on
+#Options +FollowSymlinks
+RewriteBase /
+
+#RewriteCond %{HTTP_HOST} ^example\.com$ [NC]
+#RewriteRule ^(.*)$ http://www.example.com/$1 [R=301,L]
+
+
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !\.(jpg|jpeg|png|gif|ico|bmp|flv|mpg|mpeg|mp4|mp3|zip|rar|txt|doc|swf|js|css)$ [NC]
+
+
+
+AddDefaultCharset utf-8

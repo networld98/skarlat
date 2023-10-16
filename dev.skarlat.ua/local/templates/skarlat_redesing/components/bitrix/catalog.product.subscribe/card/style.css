@@ -1,0 +1,23 @@
+.product-item .product-item__wrapper-block-btn .bx-catalog-subscribe-button{
+	padding: 5px;
+    width: 35px;
+    height: 35px;
+    border: none;
+    background: none;
+    fill: #a3a3a3;
+    transition: all .3s ease-in-out;
+	background:none;
+	border:none;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.product-item .product-item__wrapper-block-btn .bx-catalog-subscribe-button.disabled{
+	fill:red;
+}
+.product-item .product-item__wrapper-block-btn .bx-catalog-subscribe-button:hover{
+	background:none;
+}
+.bx-catalog-subscribe-button .heart{
+	width:100%;
+}

@@ -1,0 +1,1 @@
+<img src="/local/templates/skarlat_redesing/img/blog.jpg" alt="about_img">

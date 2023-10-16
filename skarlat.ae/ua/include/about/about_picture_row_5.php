@@ -1,0 +1,1 @@
+<img alt="гарантія 25.04.jpg" src="/upload/medialibrary/c79/9w01ohzoxuwhngggz05nv809tg0kr87z/garantiya-25.04.jpg" title="гарантія 25.04.jpg">

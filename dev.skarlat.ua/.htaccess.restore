@@ -1,0 +1,51 @@
+Options -Indexes
+ErrorDocument 404 /404.php
+php_value auto_prepend_file "/home/bitrix/ext_www/skarlat.ua/bitrix/modules/security/tools/start.php"
+<IfModule mod_php5.c>
+php_flag session.use_trans_sid off
+#php_value display_errors 1
+#php_value mbstring.internal_encoding UTF-8
+</IfModule>
+
+<IfModule mod_rewrite.c>
+Options +FollowSymLinks
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-l
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !/bitrix/urlrewrite.php$
+RewriteRule ^(.*)$ /bitrix/urlrewrite.php [L]
+RewriteRule .* - [E=REMOTE_USER:%{HTTP:Authorization}]
+</IfModule>
+
+<IfModule mod_dir.c>
+DirectoryIndex index.php index.html
+</IfModule>
+
+<IfModule mod_expires.c>
+ExpiresActive on
+ExpiresByType image/jpeg "access plus 3 day"
+ExpiresByType image/gif "access plus 3 day"
+ExpiresByType image/png "access plus 3 day"
+ExpiresByType text/css "access plus 3 day"
+ExpiresByType application/javascript "access plus 3 day"
+</IfModule>
+
+Redirect 301 /catalog/magnitnye_sistemy/ /catalog/magnitni_sistemi/
+Redirect 301 /ru/catalog/magnitnye_sistemy/magnitni_trekovi_sistemi/nakladni/ /ru/catalog/magnitnye_sistemy/magnitnye_trekovye_sistemy/nakladnye/
+Redirect 301 /catalog/magnitni_sistemi/magnitnye_trekovye_sistemy/vstraivaemye/ /catalog/magnitni_sistemi/magnitni_trekovi_sistemi/vbudovuvani/
+Redirect 301 /ru/catalog/magnitni_sistemi/   /ru/catalog/magnitnye_sistemy/
+Redirect 301  /catalog/magnitnye_sistemy/aksessuary_/	/catalog/magnitni_sistemi/aksesuari/
+Redirect 301 /ru/catalog/magnitni_sistemi/magnitni_trekovi_sistemi/ /ru/catalog/magnitnye_sistemy/magnitnye_trekovye_sistemy/
+Redirect 301 /catalog/magnitnye_sistemy/magnitnye_trekovye_sistemy/ /catalog/magnitni_sistemi/magnitni_trekovi_sistemi/
+Redirect 301 /ru/catalog/magnitni_sistemi/magnitni_trekovi_sistemi/ /ru/catalog/magnitnye_sistemy/magnitnye_trekovye_sistemy/
+Redirect 301 /ru/catalog/magnitni_sistemi/magnitni_trekovi_sistemi/vbudovuvani/ /ru/catalog/magnitnye_sistemy/magnitnye_trekovye_sistemy/vstraivaemye/
+Redirect 301 /catalog/magnitnye_sistemy/magnitnye_trekovye_sistemy/vstraivaemye/ /catalog/magnitni_sistemi/magnitni_trekovi_sistemi/vbudovuvani/
+Redirect 301 /catalog/magnitnye_sistemy/magnitnye_trekovye_sistemy/nakladnye/ /catalog/magnitnye_sistemy/magnitnye_trekovye_sistemy/nakladnye/
+Redirect 301 /ru/catalog/magnitni_sistemi/magnitni_trekovi_sistemi/pidvisni/ /ru/catalog/magnitnye_sistemy/magnitnye_trekovye_sistemy/podvesnye/
+Redirect 301 /catalog/magnitnye_sistemy/magnitnye_trekovye_sistemy/podvesnye/ /catalog/magnitni_sistemi/magnitni_trekovi_sistemi/pidvisni/
+Redirect 301 /catalog/magnitnye_sistemy/aksessuary_/ /catalog/magnitni_sistemi/aksesuari/
+Redirect 301 /ru/catalog/magnitni_sistemi/aksesuari/ /ru/catalog/magnitnye_sistemy/aksessuary_/
+
+Redirect 301 /catalog/osveshchenie_led_svetilniki/plastikovye_tochechnye/ /catalog/osveshchenie_led_svetilniki/plastikovi_tochkovi/
+Redirect 301 /ru/catalog/osveshchenie_led_svetilniki/plastikovi_tochkovi/  /ru/catalog/osveshchenie_led_svetilniki/plastikovye_tochechnye/

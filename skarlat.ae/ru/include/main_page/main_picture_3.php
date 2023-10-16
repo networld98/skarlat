@@ -1,0 +1,1 @@
+<img width="1000" alt="каталог_2023 на сайт.jpg" src="/upload/medialibrary/8cd/u4zxqwh9lcbk5uvac4vsu1obd7880bwz/katalog_2023-na-sayt.jpg" height="656" title="каталог_2023 на сайт.jpg">

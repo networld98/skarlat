@@ -1,0 +1,53 @@
+
+
+.bx-filter-select-popup {
+    background: #fff;
+    padding: 0;
+    min-width: 173px;
+    max-height: 40vh;
+    overflow: auto;
+}
+.bx-filter-select-popup ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.bx-filter-select-popup ul li {
+    display: block;
+    text-align: left;
+    vertical-align: middle;
+}
+.bx-filter-select-popup ul li:first-child {
+    border-bottom: 1px solid #e5e5e5;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+}
+.bx-filter-select-popup ul li label {
+    font-family: 'Montserrat Regular';
+    font-size: 13px;
+    color: #787878;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    padding: 10px 30px;
+    border-color: transparent transparent rgba(0,0,0,.1);
+    cursor: pointer;
+}
+.bx-filter-select-popup ul li label.selected,
+.bx-filter-select-popup ul li label:hover {
+    background-color: #f3f3f3;
+}
+.bx-filter-select-popup ul li label.disabled {
+    color: #b8b8b8;
+    background: transparent;
+}
+.bx-filter-select-popup ul li .bx-filter-param-text {
+    line-height: 34px !important;
+}
+.popup-window {
+    padding: 0;
+}
+form.smartfilter .row {
+    margin-right: -7.5px;
+    margin-left: -7.5px;
+}

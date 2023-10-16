@@ -1,0 +1,14 @@
+H1 {
+  padding-top: 0.5em;
+}
+
+TD.hint 
+{
+	border-style: solid;
+	border-width: 1px;
+	border-color: Red;
+	font-family: Arial;
+	font-size: 12px;
+	color: Black;	
+	padding : 2px 4px 2px 4px;
+}

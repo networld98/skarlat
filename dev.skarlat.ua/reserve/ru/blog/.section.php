@@ -1,0 +1,3 @@
+<?
+$sSectionName = GetMessage("BLOG");
+?>

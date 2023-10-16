@@ -1,0 +1,6 @@
+<?
+$sSectionName = "Warranty";
+$arDirProperties = Array(
+
+);
+?>

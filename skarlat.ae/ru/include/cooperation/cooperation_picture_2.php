@@ -1,0 +1,1 @@
+<img src="<?= SITE_TEMPLATE_PATH ?>/img/cooperation/чому skarlat.jpg" alt="cooperation2">

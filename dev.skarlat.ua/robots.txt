@@ -1,0 +1,27 @@
+User-Agent: *
+Disallow: /
+Disallow: /bitrix/
+Disallow: /redesign/
+Allow: /bitrix/components/
+Allow: /bitrix/cache/
+Allow: /bitrix/js/
+Allow: /bitrix/templates/
+Allow: /bitrix/panel/
+Sitemap: https://skarlat.ua/sitemap.xml
+Sitemap: https://dev.skarlat.ua/sitemap.xml
+
+User-Agent: Googlebot
+Disallow: /
+Disallow: /bitrix/
+Allow: /bitrix/components/
+Allow: /bitrix/cache/
+Allow: /bitrix/js/
+Allow: /bitrix/templates/
+Allow: /bitrix/panel/
+
+User-Agent: YandexBot
+Disallow: /bitrix/
+Host: https://skarlat.ua
+
+User-agent: GPTBot
+Disallow: /

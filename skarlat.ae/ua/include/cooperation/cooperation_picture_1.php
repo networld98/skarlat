@@ -1,0 +1,1 @@
+<img src="<?= SITE_TEMPLATE_PATH ?>/img/cooperation/хто ми.jpg" alt="cooperation1">

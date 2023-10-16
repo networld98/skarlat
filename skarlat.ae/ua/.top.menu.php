@@ -1,0 +1,39 @@
+<?
+$aMenuLinks = Array(
+	Array(
+		"3D моделі", 
+		"/ua/3d_model/",
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Гарантії", 
+		"/ua/about/guaranty/",
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Про нас", 
+		"/ua/about/",
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Контакти", 
+		"/ua/about/contacts/",
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"", 
+		"", 
+		Array(), 
+		Array(), 
+		"" 
+	)
+);
+?>
