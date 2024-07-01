@@ -1,6 +1,6 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("Замовлення");
+$APPLICATION->SetTitle("Заказ");
 use Bitrix\Sale;
 CModule::IncludeModule('sale');
 if($_GET['ORDER']>0):
@@ -63,15 +63,15 @@ else:
                     ?>
                     <ul class="thanks-page__order-data">
                         <li class="thanks-page__order-data_item">
-                            Ви успішно оформили замовлення на номер<strong class="ml-2"><?=$phone->getValue()?></strong>
+                            Вы оформили заказ на номер<strong class="ml-2"><?=$phone->getValue()?></strong>
                         </li>
                         <li class="thanks-page__order-data_item thanks-page__order-data_item-price">
-                            Всього до оплати — <strong><?= $resultPrice?> грн.</strong>
+                            Всего к уплате — <strong><?= $resultPrice?> AED.</strong>
                         </li>
 
                         <li class="thanks-page__order-data_item thanks-page__order-data_item-lk">
-                            Статус вашого замовлення ви можете відслідкувати в
-                            <strong><a href="<?=SITE_DIR?>personal/"> особистому кабінеті</a></strong>
+                            Статус вашего заказа вы можете отследить в
+                            <strong><a href="<?=SITE_DIR?>personal/"> личном кабинете</a></strong>
                         </li>
                     </ul>
 
@@ -84,7 +84,7 @@ else:
                         $onePayment = $paymentCollection[0];
                         $psID = $order->getField('PAY_SYSTEM_ID');
                         if($psID=='7' && $resultPrice>0):
-                            header('Location: https://'.$_SERVER['SERVER_NAME'].SITE_DIR.'/personal/order/result/payment.php?ORDER_ID='.$_GET['ORDER']);
+                            header('Location: https://'.$_SERVER['SERVER_NAME'].SITE_DIR.'personal/order/result/payment.php?ORDER_ID='.$_GET['ORDER']);
                             if($lastPay!=''){
                                 $diff=date_diff(new DateTime(), new DateTime($lastPay))->i;
                             }else{
@@ -92,14 +92,14 @@ else:
                             }
                             if($diff>5){
                                 ?>
-                                    <a class="product-detail__btn-buy btn-main cart-button primary" style="height:auto;" href="/personal/order/result/payment.php?ORDER_ID=<?=$_GET['ORDER']?>">Оплатити</a>
+                                    <a class="product-detail__btn-buy btn-main cart-button primary" style="height:auto;" href="<?=SITE_DIR?>personal/order/result/payment.php?ORDER_ID=<?=$_GET['ORDER']?>">Оплатити</a>
                             <?}else{?>
                                 <span style="color:red;">
-                                    Очікуємо підтвердження оплати
+                                    Ожидаем подтверждения оплаты
                                 </span>
                             <?}?>
                         <?endif;?>
-                        <a class="primary" href="/catalog/">Продовжити покупки</a>
+                        <a class="primary" href="<?=SITE_DIR?>catalog/">Продолжить покупки</a>
                     </div>
                 </div>
             </div>

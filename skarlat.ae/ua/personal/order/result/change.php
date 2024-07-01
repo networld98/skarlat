@@ -25,7 +25,7 @@ $APPLICATION->SetTitle("Авторизация");
             <div class="row">
                 <div class="col-12">
                     <div class="block-head">
-                        <h1>Вы зарегистрированы и успешно авторизовались.</h1>
+                        <h1>Ви зареєстровані та успішно авторизовані.</h1>
                     </div>
                 </div>
             </div>
@@ -35,7 +35,7 @@ $APPLICATION->SetTitle("Авторизация");
     <div class="row">
         <div class="col-12 d-flex justify-content-center">
             <div class="info-content">
-                <p><a class="promo" href="<?=SITE_DIR?>">Вернуться на главную страницу</a></p>
+                <p><a class="promo" href="<?=SITE_DIR?>">Вернуться на головну сторінку</a></p>
             </div>
         </div>
     </div>

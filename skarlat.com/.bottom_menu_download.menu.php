@@ -8,15 +8,22 @@ $aMenuLinks = Array(
 		"" 
 	),
 	Array(
-		"Premium 2023", 
+		"3d models", 
+		"/3d_model/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Premium catalog", 
 		"/upload/SKARLAT%20PREMIUM_2023_general_ENG.pdf", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
-		"3d models", 
-		"/3d_model/", 
+		"Magnetic modular catalog", 
+		"/upload/Modular magnetic catalog.pdf", 
 		Array(), 
 		Array(), 
 		"" 

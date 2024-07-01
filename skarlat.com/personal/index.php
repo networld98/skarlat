@@ -55,7 +55,7 @@ if($USER->isAuthorized()):
     }
 
     $arSelect = Array("ID", "IBLOCK_ID", "NAME", "PREVIEW_TEXT", "CODE");
-    $arFilter = Array("IBLOCK_ID"=>35,"ACTIVE"=>"Y");
+    $arFilter = Array("IBLOCK_ID"=>67,"ACTIVE"=>"Y");
     $res = CIBlockElement::GetList(Array("SORT"=>"ASC"), $arFilter, false, false, $arSelect);
     while($ob = $res->fetch()){
         $arResult['QUESTIONS'][]=$ob;

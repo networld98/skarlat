@@ -1,7 +1,7 @@
 <?php
 $MESS["ORDER_TITLE"] = "Оформлення замовлення";
 $MESS["ORDER_SUMM"] = "на сумму";
-$MESS["ORDER_CURRENCY"] = "грн";
+$MESS["ORDER_CURRENCY"] = "AED";
 $MESS["CHANGE_BASKET"] = "Редагувати замовлення";
 $MESS["DEL_BASKET"] = "Видалити";
 $MESS["CANCEL_BASKET"] = "Відміна";
@@ -34,8 +34,13 @@ $MESS["ORDER_CITY_ODESA"] = "Одеса";
 $MESS["ORDER_CITY_KHARKIV"] = "Харків";
 $MESS["ORDER_CITY_DNIPRO"] = "Дніпро";
 $MESS["ORDER_CITY_LVIV"] = "Львів";
+$MESS["ORDER_CITY_DUBAI"] = "Дубай";
+$MESS["ORDER_CITY_ABU_DABI"] = "Абу-Дабі";
+$MESS["ORDER_CITY_SHARJAH"] = "Шарджа";
+$MESS["ORDER_CITY_AL_AIN"] = "Аль-Айн";
+$MESS["ORDER_CITY_FUJAIRAH"] = "Фуджейра";
 $MESS["ORDER_OPIS_CASH"] = "<p>Опис оплата готівкою.</p>";
 $MESS["ORDER_OPIS_CARD"] = "<p>Опис оплаті картками банків.</p>";
-$MESS["СHANGE_BASKET"] = "Львів";
-$MESS["DEL_BASKET"] = "<p>Опис оплата готівкою.</p>";
-$MESS["CANCEL_BASKET"] = "<p>Опис оплаті картками банків.</p>";
+$MESS["CHANGE_BASKET"] = "Редагувати замовлення";
+$MESS["DEL_BASKET"] = "Видалити";
+$MESS["CANCEL_BASKET"] = "Відміна";

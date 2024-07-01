@@ -418,3 +418,30 @@ function ModifySaleMails($orderID, &$eventName, &$arFields)
     $arFields["PHONE"] =  $phone;
     $arFields["ADDRESS"] = $address;
 }
+if(SITE_ID == 'ae'|| SITE_ID == 're' || SITE_ID == 'ue'){
+    if(CModule::IncludeModule("catalog") && CModule::IncludeModule("sale")){
+        $siteIDs = array('ae', 're', 'ue');
+        $fuserId = CSaleBasket::GetBasketUserID();
+        $dbBasketItems = CSaleBasket::GetList(
+            array(),
+            array(
+                "FUSER_ID" => $fuserId,
+                "ORDER_ID" => "NULL",
+                "LID" => $siteIDs,
+            ),
+            false,
+            false,
+            array('ID', 'DELAY', 'CAN_BUY', 'SET_PARENT_ID', 'TYPE', 'NAME', "PRODUCT_ID", "LID")
+        );
+        $arBasket = array();
+        while($b = $dbBasketItems->Fetch()){
+            $arBasket[] = $b;
+        }
+        foreach($arBasket as $arProduct){
+            $arFields = array(
+                "LID" => SITE_ID, // вот здесь и происходит финт ушами
+            );
+            CSaleBasket::Update($arProduct["ID"], $arFields);
+        }
+    }
+}

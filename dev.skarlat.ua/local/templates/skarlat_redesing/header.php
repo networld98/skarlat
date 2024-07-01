@@ -145,7 +145,7 @@ while ($arItems = $dbBasketItems->Fetch()) {
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5"/>
     <link rel="alternate" hreflang="x-default" href="https://dev.skarlat.ua/">
-    <link rel="alternate" hreflang="en" href="https://dev.skarlat.ua/en/">
+    <link rel="alternate" hreflang="en" href="https://skarlat.com/">
     <link rel="canonical" href="https://<?=$_SERVER['SERVER_NAME']?><?=$_SERVER['SCRIPT_URL']?>">
     <link rel="apple-touch-icon" sizes="57x57" href="<?= SITE_TEMPLATE_PATH ?>/favicon/apple-icon-57x57.png"/>
     <link rel="apple-touch-icon" sizes="60x60" href="<?= SITE_TEMPLATE_PATH ?>/favicon/apple-icon-60x60.png"/>
@@ -422,7 +422,7 @@ if (!$_SESSION['WATERMARK_IMAGE']) {
                             <a class="header-lang <? if (SITE_ID == 'sh') { ?>active<? } ?>"
                                href="<?= $enUrl ?>">En</a>
                             <a class="header-lang <? if (SITE_ID == 'mg') { ?>active<? } ?>"
-                               href="<?= $uaUrl ?>">Ua</a>
+                               href="<?/*= $uaUrl */?>https://skarlat.ua/">Ua</a>
                             <?if (SITE_ID == 'ae' || SITE_ID == 're' || SITE_ID == 'ue') {?>
                                 <a class="header-lang <? if (SITE_ID == 're') { ?>active<? } ?>"
                                    href="<?= $ruUrl ?>">Ru</a>

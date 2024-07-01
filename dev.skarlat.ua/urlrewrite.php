@@ -1,5 +1,37 @@
 <?php
 $arUrlRewrite=array (
+  44 => 
+  array (
+    'CONDITION' => '#^/ru/pub/calendar-sharing/([0-9a-zA-Z]+)/?([^/]*)#',
+    'RULE' => 'hash=$1',
+    'ID' => 'bitrix:calendar.pub.sharing',
+    'PATH' => '/ru/pub/calendar_sharing.php',
+    'SORT' => 100,
+  ),
+  45 => 
+  array (
+    'CONDITION' => '#^/ua/pub/calendar-sharing/([0-9a-zA-Z]+)/?([^/]*)#',
+    'RULE' => 'hash=$1',
+    'ID' => 'bitrix:calendar.pub.sharing',
+    'PATH' => '/ua/pub/calendar_sharing.php',
+    'SORT' => 100,
+  ),
+  43 => 
+  array (
+    'CONDITION' => '#^/pub/calendar-sharing/([0-9a-zA-Z]+)/?([^/]*)#',
+    'RULE' => 'hash=$1',
+    'ID' => 'bitrix:calendar.pub.sharing',
+    'PATH' => '/pub/calendar_sharing.php',
+    'SORT' => 100,
+  ),
+  42 => 
+  array (
+    'CONDITION' => '#^/marketing/master-yandex/#',
+    'RULE' => '',
+    'ID' => '',
+    'PATH' => '/marketing/master-yandex.php',
+    'SORT' => 100,
+  ),
   33 => 
   array (
     'CONDITION' => '#^/personal/order/result/#',
@@ -22,6 +54,14 @@ $arUrlRewrite=array (
     'RULE' => '',
     'ID' => 'bitrix:sale.personal.order',
     'PATH' => '/personal/order/index.php',
+    'SORT' => 100,
+  ),
+  41 => 
+  array (
+    'CONDITION' => '#^/shop/catalog/#',
+    'RULE' => '',
+    'ID' => 'bitrix:catalog.productcard.controller',
+    'PATH' => '/shop/catalog/index.php',
     'SORT' => 100,
   ),
   23 => 
@@ -56,7 +96,7 @@ $arUrlRewrite=array (
     'PATH' => '/crm/type/index.php',
     'SORT' => 100,
   ),
-  40 => 
+  46 => 
   array (
     'CONDITION' => '#^/catalog/#',
     'RULE' => '',

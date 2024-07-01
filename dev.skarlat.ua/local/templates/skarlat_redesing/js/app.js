@@ -109,10 +109,12 @@ $(document).ready(function() {
         fullModalFilter();
     })
     //Смена урлов в личном кабинете
-    if(window.location.pathname=='/personal/'){
+    if(window.location.pathname=='/personal/' || window.location.pathname=='/ru/personal/' || window.location.pathname=='/ua/personal/'){
         $(window).resize(function() {
             $('.lk-content .preloader').hide();
         });
+        $('.lk-content .preloader').hide();
+
         function setLocation(curLoc){
             try {
                 history.pushState(null, null, curLoc);

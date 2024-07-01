@@ -408,7 +408,7 @@ $_SESSION['CUSTOM_DESCRIPTION']=$_SESSION['ADD_SECT_ONE'].$arResult['IPROPERTY_V
                         </div>
                         <div class="product-info-action" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
                         <?if((!in_array(SITE_ID,$no_shop_site_array) && !in_array(SITE_ID,$no_shop_site_price_array)) || in_array(SITE_ID,$no_shop_site_price_array)){?>
-                                <?if(!empty($arResult['OFFERS'][0]['ITEM_PRICES'])){?>
+                                <?if(!empty($arResult['OFFERS'][0]['ITEM_PRICES'] && $arResult['OFFERS'][0]['ITEM_PRICES'][0]['PRICE']!=0)){?>
                                 <div class="product-info-price">
                                     <?foreach($arResult['OFFERS'] as $key=> &$offer):?>
                                         <?if(SITE_ID=='sh'){$arCurres[$offer['ITEM_PRICES'][0]['CURRENCY']]=$offer['ITEM_PRICES'][0]['CURRENCY'];}?>

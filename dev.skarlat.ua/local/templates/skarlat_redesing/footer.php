@@ -250,7 +250,7 @@ use Bitrix\Main\Localization\Loc;?>
         false
     );
 }
-?>https://skarlat.ae/
+?>
 <? if(CSite::InDir(SITE_DIR.'catalog/')){
     $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . '/js/js-image-zoom.min.js');?>
     <script>

@@ -287,7 +287,7 @@ if (basketItemsCount() > 0):
                                              aria-labelledby="pills-new-user-tab">
                                             <?
                                             //Если авторизован подставляем город из личного кабинета если нет ставим дефолтный
-                                            $defaultCity = 18; //Киев
+                                            $defaultCity = 30297; //Киев
                                             global $USER;
                                             if($USER->IsAuthorized()){
                                                 $order = array('sort' => 'asc');
@@ -383,7 +383,7 @@ if (basketItemsCount() > 0):
                                                     "SHOW_DEFAULT_LOCATIONS" => "Y",
                                                     "CACHE_TYPE" => "A",
                                                     "CACHE_TIME" => "36000000",
-                                                    "FILTER_SITE_ID" => "mg",
+                                                    "FILTER_SITE_ID" => "ae",
                                                     "INITIALIZE_BY_GLOBAL_EVENT" => "",
                                                     "SUPPRESS_ERRORS" => "N"
                                                 )
@@ -391,16 +391,16 @@ if (basketItemsCount() > 0):
                                         </div>
                                         <input type="hidden" value="Y" name="ordered">
                                         <div class="order-block__delivery-way-group" id="ajaxHelpCities">
-                                            <a href="javascript:void(0)" onclick="setCity(18);"
-                                               class="order-block__delivery-way"><?=GetMessage('ORDER_CITY_KYIV')?></a>
-                                            <a href="javascript:void(0)" onclick="setCity(2256);"
-                                               class="order-block__delivery-way"><?=GetMessage('ORDER_CITY_ODESA')?></a>
-                                            <a href="javascript:void(0)" onclick="setCity(25736);"
-                                               class="order-block__delivery-way"><?=GetMessage('ORDER_CITY_KHARKIV')?></a>
-                                            <a href="javascript:void(0)" onclick="setCity(20724);"
-                                               class="order-block__delivery-way"><?=GetMessage('ORDER_CITY_DNIPRO')?></a>
-                                            <a href="javascript:void(0)" onclick="setCity(6746);"
-                                               class="order-block__delivery-way"><?=GetMessage('ORDER_CITY_LVIV')?></a>
+                                            <a href="javascript:void(0)" onclick="setCity(30297);"
+                                               class="order-block__delivery-way"><?=GetMessage('ORDER_CITY_DUBAI')?></a>
+                                            <a href="javascript:void(0)" onclick="setCity(30296);"
+                                               class="order-block__delivery-way"><?=GetMessage('ORDER_CITY_ABU_DABI')?></a>
+                                            <a href="javascript:void(0)" onclick="setCity(30298);"
+                                               class="order-block__delivery-way"><?=GetMessage('ORDER_CITY_SHARJAH')?></a>
+                                            <a href="javascript:void(0)" onclick="setCity(30303);"
+                                               class="order-block__delivery-way"><?=GetMessage('ORDER_CITY_AL_AIN')?></a>
+                                            <a href="javascript:void(0)" onclick="setCity(30300);"
+                                               class="order-block__delivery-way"><?=GetMessage('ORDER_CITY_FUJAIRAH')?></a>
                                         </div>
                                     </div>
                                     <?

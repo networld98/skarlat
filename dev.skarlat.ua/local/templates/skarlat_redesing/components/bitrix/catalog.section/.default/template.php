@@ -226,6 +226,7 @@ $this->setFrameMode(true);?>
             {
                 $rowItems = array_splice($arResult['ITEMS'], 0, $rowData['COUNT']);
                 foreach ($rowItems as $item) {
+
                     $count++;
                     ?>
                     <?

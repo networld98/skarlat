@@ -29,8 +29,8 @@ $aMenuLinks = Array(
         ""
     ),
     Array(
-        "skarlat.com",
-        "https://skarlat.com",
+        "skarlat.ae",
+        "https://skarlat.ae",
         Array(),
         Array(),
         ""

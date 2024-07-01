@@ -765,10 +765,14 @@ a.outline {
 }
 .lk-content.active img.preloader, .lk-content img.preloader {
     position: absolute;
-    z-index: 0;
+    z-index: 10;
     left: 25%;
     width: 50%;
     top: 10%;
+}
+.lk-content.active img.preloader:before, .lk-content img.preloader:before {
+    content: "";
+
 }
 .lk-content.active .lk-content-modal__body {
     height: 100%;

@@ -1,19 +1,19 @@
- <div class="row call">
+<div class="row call">
 	<div class="col-12">
 		<h2>Consultations and requests for the phone:</h2>
-    </div>
-    <div class="col-6">
-        <ul>
-            <li><a href="tel:+380506558878">+44 777 672 23 09</a></li>
-            <li><a href="tel:+971503965755">+97 150 396 57 55</a></li>
-        </ul>
-    </div>
-    <div class="col-6">
-        <ul>
-            <li><span>United Kingdom</span></li>
-            <li><span>United Arab Emirates</span></li>
-        </ul>
-    </div>
+	</div>
+	<div class="col-6">
+		<ul>
+			<li><a href="tel:+380506558878">+44 777 672 23 09</a></li>
+			<li><a href="tel:+380679387248">+38 067 938 72 48</a></li>
+		</ul>
+	</div>
+	<div class="col-6">
+		<ul>
+			<li>United Kingdom</li>
+			<li>Ukraine</li>
+		</ul>
+	</div>
 </div>
 <div class="row schedule">
 	<div class="col-12">
@@ -37,9 +37,8 @@
 <div class="row email">
 	<div class="col-12">
 		<h2>Email:</h2>
-         <a href="mailto:info@skarlat.com">info@skarlat.com</a>
-        <br>
-         <a href="mailto:dubai@skarlat.com">dubai@skarlat.com</a>
+ <a href="mailto:info@skarlat.com">info@skarlat.com</a> <br>
+ <a href="mailto:dubai@skarlat.com">dubai@skarlat.com</a>
 	</div>
 </div>
  <br>

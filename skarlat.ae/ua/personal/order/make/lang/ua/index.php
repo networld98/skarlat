@@ -1,8 +1,7 @@
 <?php
-$MESS["ORDER_ACC"] = "Сплатити частину замовлення з внутрішнього рахунку";
 $MESS["ORDER_TITLE"] = "Оформлення замовлення";
-$MESS["ORDER_SUMM"] = "на суму";
-$MESS["ORDER_CURRENCY"] = "грн";
+$MESS["ORDER_SUMM"] = "на сумму";
+$MESS["ORDER_CURRENCY"] = "AED";
 $MESS["CHANGE_BASKET"] = "Редагувати замовлення";
 $MESS["DEL_BASKET"] = "Видалити";
 $MESS["CANCEL_BASKET"] = "Відміна";
@@ -29,12 +28,19 @@ $MESS["ORDER_OPIS_DK"] = "<p>Кур'єр доставить Вашу посил�
 $MESS["ORDER_NO_NP"] = "Доступних способів доставки не знайдено";
 $MESS["ORDER_CASH"] = "Готівкою";
 $MESS["ORDER_CARD"] = "Оплата картою";
-$MESS["ORDER_SUBMIT"] = "ПІДТВЕРДИТИ";
+$MESS["ORDER_SUBMIT"] = "Підтвердити";
 $MESS["ORDER_CITY_KYIV"] = "Київ";
 $MESS["ORDER_CITY_ODESA"] = "Одеса";
 $MESS["ORDER_CITY_KHARKIV"] = "Харків";
 $MESS["ORDER_CITY_DNIPRO"] = "Дніпро";
 $MESS["ORDER_CITY_LVIV"] = "Львів";
+$MESS["ORDER_CITY_DUBAI"] = "Дубай";
+$MESS["ORDER_CITY_ABU_DABI"] = "Абу-Дабі";
+$MESS["ORDER_CITY_SHARJAH"] = "Шарджа";
+$MESS["ORDER_CITY_AL_AIN"] = "Аль-Айн";
+$MESS["ORDER_CITY_FUJAIRAH"] = "Фуджейра";
 $MESS["ORDER_OPIS_CASH"] = "<p>Опис оплата готівкою.</p>";
 $MESS["ORDER_OPIS_CARD"] = "<p>Опис оплаті картками банків.</p>";
-?>
+$MESS["CHANGE_BASKET"] = "Редагувати замовлення";
+$MESS["DEL_BASKET"] = "Видалити";
+$MESS["CANCEL_BASKET"] = "Відміна";

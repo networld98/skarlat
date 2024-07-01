@@ -62,6 +62,10 @@ $(document).ready(function(){
 	$('body').delegate('.modal-body.modal-body-add-compare #compareAddResult','submit',function(){
 		return false;
 	});
+	$('#autocompleteCity.order-block__delivery-autocomplete').change(function(){
+		let city = $(this).val();
+		$('#selectCity').val(city);
+	})
 });
 function aminateAjax(){
 	var step=0.5;
@@ -473,7 +477,10 @@ function addModalCompare(){
 }
 function setDevCity(city){
 	$('#selectCity').val(city);
+	$('#autocompleteCity.bx-ui-sls-fake').val(city);
+	$('.bx-ui-sls-route').val('');
 	getNPOffices(city);
+
 }
 function setCity(id){
 	let div = $('.select-city.form-group');

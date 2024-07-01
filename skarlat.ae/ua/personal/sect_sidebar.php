@@ -2,7 +2,7 @@
 
 <div class="bx-sidebar-block">
 	<?$APPLICATION->IncludeComponent("bitrix:menu", "personal_menu", array(
-		"ROOT_MENU_TYPE" => "personal-left",
+		"ROOT_MENU_TYPE" => "personal",
 		"MAX_LEVEL" => "1",
 		"MENU_CACHE_TYPE" => "A",
 		"CACHE_SELECTED_ITEMS" => "N",

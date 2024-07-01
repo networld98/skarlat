@@ -75,23 +75,26 @@ use Bitrix\Main\ModuleManager;
                 $res = CIBlockElement::GetList(array("name" => "asc"), $arFilter, false, array(), $arSelect);
                 while ($ob = $res->GetNextElement()) {
                     $arFields = $ob->GetFields();
-
-                    if (!in_array($arFields['ID'], $no) && !in_array($arFields['ID'], $yes)) {
-                        $yes[] = $arFields['ID'];
+                    if(!in_array($arFields['ID'], $no) ){
+                        $yes[$arFields['ID']] = $arFields['ID'];
+                    }
+                    if (is_array($arFields['PROPERTY_ANOTHER_COLOR_PRODUCT_VALUE'])) {
                         foreach ($arFields['PROPERTY_ANOTHER_COLOR_PRODUCT_VALUE'] as $prop) {
-                            if (!in_array($prop, $no) && in_array($prop, $yes)) {
-                                $no[] = $prop;
-                            }
+                            $no[] = $prop;
                         }
+                    }else{
+                        $no[] = $arFields['PROPERTY_ANOTHER_COLOR_PRODUCT_VALUE'];
+                    }
+                    if (is_array($arFields['PROPERTY_ANOTHER_TEMPERATURE_PRODUCT_VALUE'])) {
                         foreach ($arFields['PROPERTY_ANOTHER_TEMPERATURE_PRODUCT_VALUE'] as $prop) {
-                            if (!in_array($prop, $no) && in_array($prop, $yes)) {
-                                $no[] = $prop;
-                            }
+                            $no[] = $prop;
                         }
+                    }else{
+                        $no[] = $arFields['PROPERTY_ANOTHER_TEMPERATURE_PRODUCT_VALUE'];
                     }
                 }
                 global $arrFilter;
-                $arrFilter = array('ID' => array_diff($yes,array_uintersect($no, $yes, "strcasecmp")));
+                $arrFilter = array('ID' => $yes);
 
                 $APPLICATION->IncludeComponent(
                     "bitrix:catalog.smart.filter",

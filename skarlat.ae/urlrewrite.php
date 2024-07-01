@@ -40,6 +40,22 @@ $arUrlRewrite=array (
     'PATH' => '/conference/index.php',
     'SORT' => 100,
   ),
+  42 => 
+  array (
+    'CONDITION' => '#^/ua/catalog/#',
+    'RULE' => '',
+    'ID' => 'bitrix:catalog',
+    'PATH' => '/ua/catalog/index.php',
+    'SORT' => 100,
+  ),
+  43 => 
+  array (
+    'CONDITION' => '#^/ru/catalog/#',
+    'RULE' => '',
+    'ID' => 'bitrix:catalog',
+    'PATH' => '/ru/catalog/index.php',
+    'SORT' => 100,
+  ),
   6 => 
   array (
     'CONDITION' => '#^/personal/#',
@@ -56,7 +72,7 @@ $arUrlRewrite=array (
     'PATH' => '/crm/type/index.php',
     'SORT' => 100,
   ),
-  39 => 
+  44 => 
   array (
     'CONDITION' => '#^/catalog/#',
     'RULE' => '',
@@ -64,22 +80,6 @@ $arUrlRewrite=array (
     'PATH' => '/catalog/index.php',
     'SORT' => 100,
   ),
-40 =>
-    array (
-        'CONDITION' => '#^/ua/catalog/#',
-        'RULE' => '',
-        'ID' => 'bitrix:catalog',
-        'PATH' => '/ua/catalog/index.php',
-        'SORT' => 100,
-    ),
-41=>
-    array (
-        'CONDITION' => '#^/ru/catalog/#',
-        'RULE' => '',
-        'ID' => 'bitrix:catalog',
-        'PATH' => '/ru/catalog/index.php',
-        'SORT' => 100,
-    ),
   29 => 
   array (
     'CONDITION' => '#^/devops/#',

@@ -1,5 +1,6 @@
 <?
-$sSectionName = "Coopertaion";
+$sSectionName = "Cooperation";
 $arDirProperties = Array(
+
 );
 ?>

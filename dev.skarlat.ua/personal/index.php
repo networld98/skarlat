@@ -2,6 +2,8 @@
 define("NEED_AUTH", true);
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 use Bitrix\Main\Localization\Loc,
+    Bitrix\Sale\Location\LocationTable,
+    Bitrix\Main\Loader,
     Bitrix\Main\Config\Option,
     Bitrix\Sale;
 $APPLICATION->SetTitle(GetMessage('ORDER_TITLE'));
@@ -188,7 +190,45 @@ endif;
                                             <div class="select-city form-group">
                                                 <label for="selectCity" class="nav-content-tab__pills-label"><?=GetMessage('ORDER_YOU_CITY')?>:</label>
                                                 <div class="select-city form-group">
-                                                    <input type="text" class="form-control" value="<?=$arResult['USER_DATA']['PERSONAL_CITY']?>" name="DELIVERY[cityName]" id="selectCity" onchange="getNPOffices($(this).val());" required="required" />
+                                                    <?
+                                                    Loader::includeModule('sale');
+                                                    $cityName =  $arResult['USER_DATA']['PERSONAL_CITY'];
+
+                                                    $parameters = [
+                                                        'filter' => ['=NAME.NAME' => $cityName, '=TYPE.CODE' => 'CITY'],
+                                                        'select' => ['ID'],
+                                                        'limit' => 1,
+                                                    ];
+                                                    $dbLocations = LocationTable::getList($parameters);
+
+                                                    if ($location = $dbLocations->fetch()) {
+                                                    }else {
+                                                        $location['ID'] = 18;
+                                                    }
+
+                                                    $APPLICATION->IncludeComponent(
+                                                        "bitrix:sale.location.selector.search",
+                                                        "custom",
+                                                        array(
+                                                            "COMPONENT_TEMPLATE" => ".default",
+                                                            "ID" => $location['ID'],
+                                                            "NP" => $arResult['USER_DATA']['PERSONAL_NOTES'],
+                                                            "CODE" => "",
+                                                            "INPUT_NAME" => "DELIVERY[cityName]",
+                                                            "INPUT_VALUE" => $arResult['USER_DATA']['PERSONAL_CITY'],
+                                                            "PROVIDE_LINK_BY" => "id",
+                                                            "JSCONTROL_GLOBAL_ID" => "",
+                                                            "JS_CALLBACK" => "",
+                                                            "FILTER_BY_SITE" => "Y",
+                                                            "SHOW_DEFAULT_LOCATIONS" => "Y",
+                                                            "CACHE_TYPE" => "A",
+                                                            "CACHE_TIME" => "36000000",
+                                                            "FILTER_SITE_ID" => "mg",
+                                                            "INITIALIZE_BY_GLOBAL_EVENT" => "",
+                                                            "SUPPRESS_ERRORS" => "N"
+                                                        )
+                                                    ); ?>
+                                                    <input type="hidden" class="form-control" value="<?=$arResult['USER_DATA']['PERSONAL_CITY']?>" name="DELIVERY[cityName]" id="selectCity" onchange="getNPOffices($(this).val());" required="required" />
                                                 </div>
 
                                                 <div class="order-block__delivery-way-group">

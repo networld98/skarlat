@@ -1,8 +1,8 @@
 <?
 $MESS["ORDER_ACC"] = "Pay part of the order from the internal account";
 $MESS["ORDER_TITLE"] = "Place Order";
-$MESS["ORDER_SUMM"] = "ORDER";
-$MESS["ORDER_CURRENCY"] = "UAH";
+$MESS["ORDER_SUMM"] = "order";
+$MESS["ORDER_CURRENCY"] = "AED";
 $MESS["CHANGE_BASKET"] = "Edit Order";
 $MESS["DEL_BASKET"] = "Delete";
 $MESS["CANCEL_BASKET"] = "Cancel";
@@ -35,6 +35,11 @@ $MESS["ORDER_CITY_ODESA"] = "Odesa";
 $MESS["ORDER_CITY_KHARKIV"] = "Kharkiv";
 $MESS["ORDER_CITY_DNIPRO"] = "Dnipro";
 $MESS["ORDER_CITY_LVIV"] = "Lviv";
+$MESS["ORDER_CITY_DUBAI"] = "Dubai";
+$MESS["ORDER_CITY_ABU_DABI"] = "Abu Dhabi";
+$MESS["ORDER_CITY_SHARJAH"] = "Sharjah";
+$MESS["ORDER_CITY_AL_AIN"] = "Al Ain";
+$MESS["ORDER_CITY_FUJAIRAH"] = "Fujairah";
 $MESS["ORDER_OPIS_CASH"] = "<p> Cash Description. </p>";
 $MESS["ORDER_OPIS_CARD"] = "<p> Description of bank card payments. </p>";
 

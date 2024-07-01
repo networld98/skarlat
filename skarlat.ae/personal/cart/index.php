@@ -1,7 +1,7 @@
 <?
 define("HIDE_SIDEBAR", true);
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("Кошик");
+$APPLICATION->SetTitle("Cart");
 ?><?$APPLICATION->IncludeComponent(
 	"bitrix:sale.basket.basket", 
 	"redesign", 

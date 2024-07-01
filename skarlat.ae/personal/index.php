@@ -2,6 +2,8 @@
 define("NEED_AUTH", true);
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 use Bitrix\Main\Localization\Loc,
+    Bitrix\Sale\Location\LocationTable,
+    Bitrix\Main\Loader,
     Bitrix\Main\Config\Option,
     Bitrix\Sale;
 $APPLICATION->SetTitle(GetMessage('ORDER_TITLE'));
@@ -55,7 +57,7 @@ if($USER->isAuthorized()):
     }
 
     $arSelect = Array("ID", "IBLOCK_ID", "NAME", "PREVIEW_TEXT", "CODE");
-    $arFilter = Array("IBLOCK_ID"=>35,"ACTIVE"=>"Y");
+    $arFilter = Array("IBLOCK_ID"=>67,"ACTIVE"=>"Y");
     $res = CIBlockElement::GetList(Array("SORT"=>"ASC"), $arFilter, false, false, $arSelect);
     while($ob = $res->fetch()){
         $arResult['QUESTIONS'][]=$ob;
@@ -188,15 +190,52 @@ endif;
                                             <div class="select-city form-group">
                                                 <label for="selectCity" class="nav-content-tab__pills-label"><?=GetMessage('ORDER_YOU_CITY')?>:</label>
                                                 <div class="select-city form-group">
-                                                    <input type="text" class="form-control" value="<?=$arResult['USER_DATA']['PERSONAL_CITY']?>" name="DELIVERY[cityName]" id="selectCity" onchange="getNPOffices($(this).val());" required="required" />
-                                                </div>
+                                                    <?
+                                                    Loader::includeModule('sale');
+                                                    $cityName =  $arResult['USER_DATA']['PERSONAL_CITY'];
 
+                                                    $parameters = [
+                                                        'filter' => ['=NAME.NAME' => $cityName, '=TYPE.CODE' => 'CITY'],
+                                                        'select' => ['ID'],
+                                                        'limit' => 1,
+                                                    ];
+                                                    $dbLocations = LocationTable::getList($parameters);
+
+                                                    if ($location = $dbLocations->fetch()) {
+                                                    }else {
+                                                        $location['ID'] = 30297;
+                                                    }
+
+                                                    $APPLICATION->IncludeComponent(
+                                                        "bitrix:sale.location.selector.search",
+                                                        "custom",
+                                                        array(
+                                                            "COMPONENT_TEMPLATE" => ".default",
+                                                            "ID" => $location['ID'],
+                                                            "NP" => $arResult['USER_DATA']['PERSONAL_NOTES'],
+                                                            "CODE" => "",
+                                                            "INPUT_NAME" => "DELIVERY[cityName]",
+                                                            "INPUT_VALUE" => $arResult['USER_DATA']['PERSONAL_CITY'],
+                                                            "PROVIDE_LINK_BY" => "id",
+                                                            "JSCONTROL_GLOBAL_ID" => "",
+                                                            "JS_CALLBACK" => "",
+                                                            "FILTER_BY_SITE" => "Y",
+                                                            "SHOW_DEFAULT_LOCATIONS" => "Y",
+                                                            "CACHE_TYPE" => "A",
+                                                            "CACHE_TIME" => "36000000",
+                                                            "FILTER_SITE_ID" => "ae",
+                                                            "INITIALIZE_BY_GLOBAL_EVENT" => "",
+                                                            "SUPPRESS_ERRORS" => "N"
+                                                        )
+                                                    ); ?>
+                                                    <input type="hidden" class="form-control" value="<?=$arResult['USER_DATA']['PERSONAL_CITY']?>" name="DELIVERY[cityName]" id="selectCity" onchange="getNPOffices($(this).val());" required="required" />
+                                                </div>
                                                 <div class="order-block__delivery-way-group">
-                                                    <a href="javascript:void(0)" onclick="setDevCity('Київ');" class="nav-content-tab__pills-way"><?=GetMessage('ORDER_CITY_KYIV')?></a>
-                                                    <a href="javascript:void(0)" onclick="setDevCity('Одеса');" class="nav-content-tab__pills-way"><?=GetMessage('ORDER_CITY_ODESA')?>  </a>
-                                                    <a href="javascript:void(0)" onclick="setDevCity('Харків');" class="nav-content-tab__pills-way"><?=GetMessage('ORDER_CITY_KHARKIV')?></a>
-                                                    <a href="javascript:void(0)" onclick="setDevCity('Дніпро');" class="nav-content-tab__pills-way"><?=GetMessage('ORDER_CITY_DNIPRO')?></a>
-                                                    <a href="javascript:void(0)" onclick="setDevCity('Львів');" class="nav-content-tab__pills-way"><?=GetMessage('ORDER_CITY_LVIV')?></a>
+                                                    <a href="javascript:void(0)" onclick="setDevCity('Dubai');" class="nav-content-tab__pills-way"><?=GetMessage('ORDER_CITY_DUBAI')?></a>
+                                                    <a href="javascript:void(0)" onclick="setDevCity('Abu Dhabi');" class="nav-content-tab__pills-way"><?=GetMessage('ORDER_CITY_ABU_DABI')?>  </a>
+                                                    <a href="javascript:void(0)" onclick="setDevCity('Sharjah');" class="nav-content-tab__pills-way"><?=GetMessage('ORDER_CITY_SHARJAH')?></a>
+                                                    <a href="javascript:void(0)" onclick="setDevCity('Al Ain');" class="nav-content-tab__pills-way"><?=GetMessage('ORDER_CITY_AL_AIN')?></a>
+                                                    <a href="javascript:void(0)" onclick="setDevCity('Fujairah');" class="nav-content-tab__pills-way"><?=GetMessage('ORDER_CITY__FUJAIRAH')?></a>
                                                 </div>
                                             </div>
 
@@ -216,58 +255,7 @@ endif;
                                             );
                                             if ($ar_dtype = $db_dtype->Fetch()){
                                                 do{?>
-                                                    <?if($ar_dtype['ID']==18):?>
-                                                        <div class="form-check deliv-type">
-                                                            <input
-                                                                    class="checkbox"
-                                                                    type="radio"
-                                                                    name="DELIVERY[TYPE]"
-                                                                    id="delivery-np-input-<?=$ar_dtype['ID']?>"
-                                                                    data-toggle="collapse"
-                                                                    data-target="#delivery-np-branch-description"
-                                                                    aria-controls="delivery-np-branch-description"
-                                                                    onclick="changeDelivery(<?=$ar_dtype['ID']?>);"
-                                                                    required
-                                                                    value="<?=$ar_dtype['ID']?>"
-                                                            />
-                                                            <label class="nav-content-accordion__item-label" for="delivery-np-input-<?=$ar_dtype['ID']?>">
-                                                                <?=GetMessage('ORDER_NP')?> <?if($arResult['USER_DATA']['PERSONAL_MAILBOX']=='nova'){?><span>(<?=GetMessage('DEFAULT')?>)</span><?}?>
-                                                            </label>
-                                                        </div>
-                                                        <div class="collapse" id="delivery-np-branch-description" data-parent="#delivery-method-acard">
-                                                            <div class="deliv-settings">
-                                                                <div class="form-group">
-                                                                    <label for="selectPost"><?=GetMessage('ORDER_VIDDILENYA')?>:</label>
-                                                                    <div id="npoffice-container">
-                                                                        <select class="form-control" name="ORDER[DELIVERY][NP_OFFICE]"  id="selectPost">
-                                                                            <option><?=GetMessage('ORDER_YOU_CITY')?></option>
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="deliv-about">
-                                                                <h4><?=GetMessage('ORDER_NP')?></h4>
-                                                                <?=GetMessage('ORDER_OPIS_NP')?>
-                                                            </div>
-                                                        </div>
-                                                    <?else:?>
-                                                        <div class="form-check deliv-type">
-                                                            <input
-                                                                    class="checkbox"
-                                                                    type="radio"
-                                                                    name="DELIVERY[TYPE]"
-                                                                    id="delivery-np-cur-input-<?=$ar_dtype['ID']?>"
-                                                                    data-toggle="collapse"
-                                                                    data-target="#delivery-np-cur-description-<?=$ar_dtype['ID']?>"
-                                                                    aria-controls="delivery-np-cur-description-<?=$ar_dtype['ID']?>"
-                                                                    onclick="changeDelivery(<?=$ar_dtype['ID']?>);"
-                                                                    required
-                                                                    value="<?=$ar_dtype['ID']?>"
-                                                            />
-                                                            <label class="nav-content-accordion__item-label" for="delivery-np-cur-input-<?=$ar_dtype['ID']?>">
-                                                                <?=GetMessage('ORDER_DK')?> <?if($arResult['USER_DATA']['PERSONAL_MAILBOX']=='curier'){?><span>(<?=GetMessage('DEFAULT')?>)</span><?}?>
-                                                            </label>
-                                                        </div>
+                                                    <?if($ar_dtype['ID']==19):?>
                                                         <div id="delivery-np-cur-description-<?=$ar_dtype['ID']?>" class="collapse" data-parent="#delivery-method-acard">
                                                             <div class="form-group">
                                                                 <label for="curier-street"><?=GetMessage('ORDER_STREET')?>:</label>
@@ -325,8 +313,8 @@ endif;
                                             ?>
                                             <script>
                                                 $(document).ready(function(){
-                                                    $('#selectCity').change();
-                                                    getNPOffices($('#selectCity').val(),"<?=$arResult['USER_DATA']['PERSONAL_NOTES']?>")
+                                                    $('#autocompleteCity').change();
+                                                    getNPOffices($('#autocompleteCity').val(),"<?=$arResult['USER_DATA']['PERSONAL_NOTES']?>")
                                                 });
                                             </script>
                                             <?if($arResult['USER_DATA']['PERSONAL_MAILBOX']=='curier'):?>
@@ -367,7 +355,7 @@ endif;
                         <?
                         CModule::IncludeModule('iblock');
                         $arSelect = Array("ID", "IBLOCK_ID", "NAME", "PREVIEW_TEXT");
-                        $arFilter = Array("IBLOCK_ID"=>46);
+                        $arFilter = Array("IBLOCK_ID"=>67);
                         $res = CIBlockElement::GetList(Array("SORT"=>"ASC"), $arFilter, false, false, $arSelect);
                         while($ob = $res->fetch()){
                             ?>

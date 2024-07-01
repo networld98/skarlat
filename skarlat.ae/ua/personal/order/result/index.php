@@ -84,7 +84,7 @@ else:
                         $onePayment = $paymentCollection[0];
                         $psID = $order->getField('PAY_SYSTEM_ID');
                         if($psID=='7' && $resultPrice>0):
-                            header('Location: https://'.$_SERVER['SERVER_NAME'].SITE_DIR.'/personal/order/result/payment.php?ORDER_ID='.$_GET['ORDER']);
+                            header('Location: https://'.$_SERVER['SERVER_NAME'].SITE_DIR.'personal/order/result/payment.php?ORDER_ID='.$_GET['ORDER']);
                             if($lastPay!=''){
                                 $diff=date_diff(new DateTime(), new DateTime($lastPay))->i;
                             }else{
@@ -92,14 +92,14 @@ else:
                             }
                             if($diff>5){
                                 ?>
-                                    <a class="product-detail__btn-buy btn-main cart-button primary" style="height:auto;" href="/personal/order/result/payment.php?ORDER_ID=<?=$_GET['ORDER']?>">Оплатити</a>
+                                    <a class="product-detail__btn-buy btn-main cart-button primary" style="height:auto;" href="<?=SITE_DIR?>personal/order/result/payment.php?ORDER_ID=<?=$_GET['ORDER']?>">Оплатити</a>
                             <?}else{?>
                                 <span style="color:red;">
                                     Очікуємо підтвердження оплати
                                 </span>
                             <?}?>
                         <?endif;?>
-                        <a class="primary" href="/catalog/">Продовжити покупки</a>
+                        <a class="primary" href="<?=SITE_DIR?>catalog/">Продовжити покупки</a>
                     </div>
                 </div>
             </div>

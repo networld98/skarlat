@@ -91,5 +91,5 @@ if (!empty($arID))
     <?}?>
 </ul>
 <div class="controls">
-    <p>Products in cart: <?=$arBasketCount?></p><button class="outline" onclick="location.href='<?=SITE_DIR?>personal/cart/'" >Go to cart</button>
+    <p><?=GetMessage('PRODUCT_CART_'.$_GET['lang'])?>: <?=$arBasketCount?></p><button class="outline" onclick="location.href='<?if ($_GET['lang']!='en'){echo '/'.$_GET['lang'];}?><?=SITE_DIR?>personal/cart/'" ><?=GetMessage('GO_TO_CART_'.$_GET['lang'])?></button>
 </div>

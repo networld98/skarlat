@@ -15,7 +15,7 @@ $APPLICATION->IncludeComponent(
             "SHOW_DEFAULT_LOCATIONS" => "Y",
             "CACHE_TYPE" => "A",
             "CACHE_TIME" => "36000000",
-            "FILTER_SITE_ID" => "s1",
+            "FILTER_SITE_ID" => "ae",
             "INITIALIZE_BY_GLOBAL_EVENT" => "",
             "SUPPRESS_ERRORS" => "N",
             "POST_CITY" => 'Y'

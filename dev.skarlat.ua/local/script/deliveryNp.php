@@ -10,7 +10,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/local/script/Delivery/NovaPoshtaApi2.ph
 
 use LisDev\Delivery\NovaPoshtaApi2;
 $np = new NovaPoshtaApi2(
-    '4ffbc70ec1d696d318143ebbcead89dc',
+    'cf114057215df364f51bc7ef9f96d834cf114057215df364f51bc7ef9f96d834',
     'ru', // Язык возвращаемых данных: ru (default) | ua | en
     FALSE, // При ошибке в запросе выбрасывать Exception: FALSE (default) | TRUE
     'curl' // Используемый механизм запроса: curl (defalut) | file_get_content
@@ -19,7 +19,7 @@ global $USER;
 $iblockId = 53;
 $cities = $np->getCities();
 $sections = [];
-
+/*
 $bs = new CIBlockSection;
 $arSelect = array("ID","DESCRIPTION","NAME");
 $arFilter = array("IBLOCK_ID"=>$iblockId,"ACTIVE"=>"Y");
@@ -35,7 +35,7 @@ while($ar_result = $obSections->GetNext())
             $bs->Update($ar_result['ID'], $arLoadProductArray);
         }
     }
-}
+}*/
 /*
 $arrayCities = [];
 foreach ($cities['data'] as $city){
@@ -61,7 +61,7 @@ foreach ($arrayCities as $key => $city){
        );
        $ID = $bs->Add($arFields);
     }
-}*/
+}
 $elements = [];
 $arSelect = array("NAME","IBLOCK_SECTION_ID");
 $arFilter = array("IBLOCK_ID"=>$iblockId);
@@ -96,7 +96,7 @@ foreach ($sections as $key => $section){
     unset($result);
     unset($city);
     unset($area);
-}
+}*/
 print "Обновление отделений завершено:-) (Укр)";
 ?>
 <script>

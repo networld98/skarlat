@@ -62,6 +62,10 @@ $(document).ready(function(){
 	$('body').delegate('.modal-body.modal-body-add-compare #compareAddResult','submit',function(){
 		return false;
 	});
+	$('#autocompleteCity.order-block__delivery-autocomplete').change(function(){
+		let city = $(this).val();
+		$('#selectCity').val(city);
+	})
 });
 function aminateAjax(){
 	var step=0.5;
@@ -213,8 +217,27 @@ function sendToBasket(productId,productMinOrder){
 	});
 }
 function sendToBasketCard(productId,productMinOrder){
-	console.log(productId);
-	console.log(productMinOrder);
+	// Получаем значение pathname
+	let pathname = window.location.pathname;
+
+	// Разделяем строку по символу "/"
+	let pathParts = pathname.split('/');
+
+	// Проверяем, чтобы у нас было как минимум две папки
+	// Получаем первые две папки и объединяем их с "/"
+	let firstFolders = pathParts.slice(1, 2).join('/');
+
+	if(firstFolders=='catalog'){
+		var get = "en";
+		var text = "Add more";
+	}else if(firstFolders=='ru'){
+		var get = "ru";
+		var	text = "Добавить еще";
+	}else if(firstFolders=='ua'){
+		var get = "ua";
+		var	text = "Додати ще";
+	}
+
 	$.ajax({
 		type: "POST",
 		url: "/ajax/basket.php",
@@ -223,14 +246,14 @@ function sendToBasketCard(productId,productMinOrder){
 		success: function(response){
 			if(response=='added'){
 				$('.order-aside.modal').addClass('show');
-				$('.primary.cart-button').text('Add more');
+				$('.primary.cart-button').text(text);
 				$(".basket-aside__nav").load('/index.php .basket-aside__nav');
 			}
 		}
 	});
 	$.ajax({
 		type: "POST",
-		url: "/ajax/modal-add-cart-catalog.php",
+		url: "/ajax/modal-add-cart-catalog.php?lang="+ get,
 		success: function (data) {
 			$(".order-aside.modal.show").find('.modal-body').html(data);
 		}
@@ -475,6 +498,8 @@ function addModalCompare(){
 }
 function setDevCity(city){
 	$('#selectCity').val(city);
+	$('#autocompleteCity.bx-ui-sls-fake').val(city);
+	$('.bx-ui-sls-route').val('');
 	getNPOffices(city);
 }
 function setCity(id){

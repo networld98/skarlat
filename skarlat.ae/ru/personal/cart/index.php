@@ -1,7 +1,7 @@
 <?
 define("HIDE_SIDEBAR", true);
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("Кошик");
+$APPLICATION->SetTitle("Корзина");
 ?><?$APPLICATION->IncludeComponent(
 	"bitrix:sale.basket.basket", 
 	"redesign", 
@@ -21,7 +21,7 @@ $APPLICATION->SetTitle("Кошик");
 		"AJAX_OPTION_JUMP" => "N",
 		"AJAX_OPTION_STYLE" => "Y",
 		"AJAX_OPTION_HISTORY" => "N",
-		"PATH_TO_ORDER" => "/personal/order/make/",
+		"PATH_TO_ORDER" => SITE_DIR."personal/order/make/",
 		"HIDE_COUPON" => "N",
 		"QUANTITY_FLOAT" => "N",
 		"PRICE_VAT_SHOW_VALUE" => "Y",

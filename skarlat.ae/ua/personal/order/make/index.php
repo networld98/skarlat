@@ -19,7 +19,7 @@ $session->set('email', '');
 
 // Напопленная сумма на внутреннем счету
 global $USER;
-$personalBonus = floor(CSaleUserAccount::GetByUserID($USER->GetID(), "UAH")['CURRENT_BUDGET']);
+$personalBonus = floor(CSaleUserAccount::GetByUserID($USER->GetID(), "EUR")['CURRENT_BUDGET']);
 
 if (basketItemsCount() > 0):
     if ($_POST["ordered"] == 'Y' && check_bitrix_sessid()) {
@@ -59,7 +59,7 @@ if (basketItemsCount() > 0):
 
         $request = Application::getInstance()->getContext()->getRequest();
         $siteId = \Bitrix\Main\Context::getCurrent()->getSite();
-        $currencyCode = Option::get('sale', 'default_currency', 'UAH');
+        $currencyCode = Option::get('sale', 'default_currency', 'EUR');
         DiscountCouponsManager::init();
 
         $basket = Sale\Basket::loadItemsForFUser(Sale\Fuser::getId(), Bitrix\Main\Context::getCurrent()->getSite());
@@ -99,7 +99,7 @@ if (basketItemsCount() > 0):
 
             $barcode = array(
                 'ORDER_DELIVERY_BASKET_ID' => $shipmentItem->getId(),
-                'STORE_ID' => 'STORAGE_STORE_MAIN_ID',
+                'STORE_ID' => STORAGE_STORE_MAIN_ID,
                 'QUANTITY' => $item->getQuantity()
             );
             $setFieldResult = $shipmentItemStore->setFields($barcode);
@@ -139,8 +139,10 @@ if (basketItemsCount() > 0):
                 'SUM' => $order->getPrice()
             ));
         }
-       // $price = $order->getPrice()-$personalBonus;
+
+//        $oprice = $order->getPrice();
         /**/
+        $order->doFinalAction(true);
         $propertyCollection = $order->getPropertyCollection();
 
         foreach ($propertyCollection->getGroups() as $group) {
@@ -188,7 +190,7 @@ if (basketItemsCount() > 0):
         $USER->Authorize($registeredUserID);
         LocalRedirect('/personal/order/result/?ORDER=' . $orderId);
     }
-//Получаем список товаров
+    //Получаем список товаров
     $basket_storage = \Bitrix\Sale\Basket\Storage::getInstance(Fuser::getId(), SITE_ID);
     $basket = $basket_storage->getBasket();
 
@@ -214,7 +216,7 @@ if (basketItemsCount() > 0):
                         <h1><?=GetMessage('ORDER_TITLE')?></h1>
                         <div class="d-flex">
                             <p><?=GetMessage('ORDER_SUMM')?>:</p>
-                            <span class="price_order"><?=$fullDiscountPrice;?></span>
+                            <span class="price_order"><?= $fullDiscountPrice; ?></span>
                             <span class="currency"><?=GetMessage('ORDER_CURRENCY')?></span>
                         </div>
                     </div>
@@ -285,7 +287,7 @@ if (basketItemsCount() > 0):
                                              aria-labelledby="pills-new-user-tab">
                                             <?
                                             //Если авторизован подставляем город из личного кабинета если нет ставим дефолтный
-                                            $defaultCity = 18; //Киев
+                                            $defaultCity = 30297; //Киев
                                             global $USER;
                                             if($USER->IsAuthorized()){
                                                 $order = array('sort' => 'asc');
@@ -354,7 +356,7 @@ if (basketItemsCount() > 0):
                         <div class="col-12 col-md-6">
                             <div class="order-tab-delivery-nav">
                                 <!--<div class="order-tab-delivery-nav__item" data-delivery="self">Самовывоз</div>-->
-                                <div class="order-tab-delivery-nav__item order-tab-delivery-nav__item_nova" data-delivery="nova"><?=GetMessage('ORDER_NP')?></div>
+                                <!--<div class="order-tab-delivery-nav__item order-tab-delivery-nav__item_nova" data-delivery="nova">--><?//=GetMessage('ORDER_NP')?><!--</div>-->
                                 <div class="order-tab-delivery-nav__item order-tab-delivery-nav__item_curier" data-delivery="curier"><?=GetMessage('ORDER_DK')?></div>
                             </div>
                         </div>
@@ -381,7 +383,7 @@ if (basketItemsCount() > 0):
                                                     "SHOW_DEFAULT_LOCATIONS" => "Y",
                                                     "CACHE_TYPE" => "A",
                                                     "CACHE_TIME" => "36000000",
-                                                    "FILTER_SITE_ID" => "mg",
+                                                    "FILTER_SITE_ID" => "ae",
                                                     "INITIALIZE_BY_GLOBAL_EVENT" => "",
                                                     "SUPPRESS_ERRORS" => "N"
                                                 )
@@ -389,16 +391,16 @@ if (basketItemsCount() > 0):
                                         </div>
                                         <input type="hidden" value="Y" name="ordered">
                                         <div class="order-block__delivery-way-group" id="ajaxHelpCities">
-                                            <a href="javascript:void(0)" onclick="setCity(18);"
-                                               class="order-block__delivery-way"><?=GetMessage('ORDER_CITY_KYIV')?></a>
-                                            <a href="javascript:void(0)" onclick="setCity(2256);"
-                                               class="order-block__delivery-way"><?=GetMessage('ORDER_CITY_ODESA')?></a>
-                                            <a href="javascript:void(0)" onclick="setCity(25736);"
-                                               class="order-block__delivery-way"><?=GetMessage('ORDER_CITY_KHARKIV')?></a>
-                                            <a href="javascript:void(0)" onclick="setCity(20724);"
-                                               class="order-block__delivery-way"><?=GetMessage('ORDER_CITY_DNIPRO')?></a>
-                                            <a href="javascript:void(0)" onclick="setCity(6746);"
-                                               class="order-block__delivery-way"><?=GetMessage('ORDER_CITY_LVIV')?></a>
+                                            <a href="javascript:void(0)" onclick="setCity(30297);"
+                                               class="order-block__delivery-way"><?=GetMessage('ORDER_CITY_DUBAI')?></a>
+                                            <a href="javascript:void(0)" onclick="setCity(30296);"
+                                               class="order-block__delivery-way"><?=GetMessage('ORDER_CITY_ABU_DABI')?></a>
+                                            <a href="javascript:void(0)" onclick="setCity(30298);"
+                                               class="order-block__delivery-way"><?=GetMessage('ORDER_CITY_SHARJAH')?></a>
+                                            <a href="javascript:void(0)" onclick="setCity(30303);"
+                                               class="order-block__delivery-way"><?=GetMessage('ORDER_CITY_AL_AIN')?></a>
+                                            <a href="javascript:void(0)" onclick="setCity(30300);"
+                                               class="order-block__delivery-way"><?=GetMessage('ORDER_CITY_FUJAIRAH')?></a>
                                         </div>
                                     </div>
                                     <?
@@ -542,14 +544,14 @@ if (basketItemsCount() > 0):
                     <section class="order-payment d-none" data-show="send">
                         <div class="col-12 col-md-6">
                             <?if($personalBonus>0){?>
-                            <div class="order-block order-block__pay order-tab-payment-nav">
-                                <div class="form-group">
-                                    <label class="order-tab-payment-nav__item_account" for="pay-account" data-payment="account">
-                                        <input class="checkbox" type="checkbox" name="ORDER[PAY_CURRENT_ACCOUNT]" id="pay-account" value="Y"><?=GetMessage('ORDER_ACC')?>
-                                        <span style="float: right"><? echo $personalBonus;?></span>
-                                    </label>
+                                <div class="order-block order-block__pay order-tab-payment-nav">
+                                    <div class="form-group">
+                                        <label class="order-tab-payment-nav__item_account" for="pay-account" data-payment="account">
+                                            <input class="checkbox" type="checkbox" name="ORDER[PAY_CURRENT_ACCOUNT]" id="pay-account" value="Y"><?=GetMessage('ORDER_ACC')?>
+                                            <span style="float: right"><? echo $personalBonus;?></span>
+                                        </label>
+                                    </div>
                                 </div>
-                            </div>
                             <?}?>
                             <div class="order-block order-block__pay order-tab-payment-nav">
                                 <div class="form-group">

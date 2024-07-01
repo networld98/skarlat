@@ -132,9 +132,11 @@ global $USER, $no_shop_site_array, $no_shop_site_price_array;
                     <span class="product-category-slider-price__old-currency"><?=$arResult['CURRENCIES'][$price['CURRENCY']]; ?></span>
                 </span>
             <?endif;?>
-            <span class="product-category-slider-price__new"><?=$price['RATIO_PRICE']?>
-                <span class="product-category-slider-price__new-currency"><?=$arResult['CURRENCIES'][$price['CURRENCY']]; ?></span>
-            </span>
+            <?if($price['RATIO_BASE_PRICE']>0):?>
+                <span class="product-category-slider-price__new"><?=$price['RATIO_PRICE']?>
+                    <span class="product-category-slider-price__new-currency"><?=$arResult['CURRENCIES'][$price['CURRENCY']]; ?></span>
+                </span>
+            <?endif;?>
 		<?}?>
         </div>
     </div>

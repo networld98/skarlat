@@ -1,5 +1,5 @@
 <?
-$sSectionName = "Мій кошик";
+$sSectionName = "Моя корзина";
 $arDirProperties = array(
 
 );

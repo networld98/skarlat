@@ -26,9 +26,10 @@ if (empty($arResult))
             <li class="footer-nav__item">
                 <span><?=htmlspecialcharsbx($arItem["TEXT"])?></span>
             </li>
-        <?}elseif(strpos($arItem["LINK"],'tel') !== false){?>
+        <?}elseif(strpos($arItem["LINK"],'tel') !== false){
+            $tel = explode('+',$arItem["LINK"]);?>
             <li class="footer-nav__item">
-                <a href="tel:<?=str_replace(" ","",$arItem["TEXT"]);?>" class="footer-nav__link"><?=htmlspecialcharsbx($arItem["TEXT"])?></a>
+                <a <?= $tel[1]?> href="tel:+<?= $tel[1]?>" class="footer-nav__link"><?=htmlspecialcharsbx($arItem["TEXT"])?></a>
             </li>
         <?}else{?>
             <li class="footer-nav__item">

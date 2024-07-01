@@ -1,4 +1,10 @@
 <?
+$MESS["PERSONAL"] = "Личный кабинет";
+$MESS["SUPPORT"] = "Поддержка";
+$MESS["MENU"] = "Меню";
+$MESS["ORDER_HISTORY"] = "История заказов";
+$MESS["ORDER_BONUS"] = "Запрос на вывод";
+$MESS["CONTACTS"] = "Контакты";
 $MESS["SEARCH_GOODS"] = "Товары";
 $MESS["SEARCH_OTHER"] = "Прочее";
 $MESS["FOOTER_COMPANY_ABOUT"] = "Подробнее о компании";
@@ -34,11 +40,12 @@ $MESS["CONTACTS"] = "Контакты";
 $MESS["PHONE"] = "Телефон:";
 $MESS["WORKING_HOURS"] = "Время работы:";
 $MESS["HOURS"] = "08:00-18:00 ежедневно";
-
+$MESS["SING_IN"] = "Войти в аккаунт";
 $MESS["BLOG"] = "Блог";
 $MESS["ARTICLES"] = "Статьи";
 $MESS["GUARANTY"] = "Гарантии";
-
+$MESS["CATEGORIES"] = "Категории";
+$MESS["DIRECTORY_EMPTY"] = "Каталог пуст.";
 $MESS["AUTOROZATION"] = "Авторизация";
 $MESS["FAVORITE_AUTOROZATION"] = "Чтобы добавить товар в избранное необходимо авторизоваться!";
 ?>
