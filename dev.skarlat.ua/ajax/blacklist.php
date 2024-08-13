@@ -21,38 +21,38 @@ $recordset = $connection->query($sql);
 
 while ($record = $recordset->fetch())
 {
-    $btn = $record;
+    $btn = $record['ID'];
 }
 
 //Функция получения экземпляра класса:
-    function GetEntityDataClass($HlBlockId) {
-        if (empty($HlBlockId) || $HlBlockId < 1)
-        {
-            return false;
-        }
-        $hlblock = HLBT::getById($HlBlockId)->fetch();
-        $entity = HLBT::compileEntity($hlblock);
-        $entity_data_class = $entity->getDataClass();
-        return $entity_data_class;
+function GetEntityDataClass($HlBlockId) {
+    if (empty($HlBlockId) || $HlBlockId < 1)
+    {
+        return false;
     }
+    $hlblock = HLBT::getById($HlBlockId)->fetch();
+    $entity = HLBT::compileEntity($hlblock);
+    $entity_data_class = $entity->getDataClass();
+    return $entity_data_class;
+}
+$entity_data_class = GetEntityDataClass($hlblock);
+$rsData = $entity_data_class::getList(array(
+    'order' => array(),
+    'select' => array('*'),
+    'filter' => array()
+));
+while($el = $rsData->fetch()){
+    $ElementID = $el['ID'];
+    $ProductID = $el['UF_ELEMENT'];
+}
+if($btn != 0){
     $entity_data_class = GetEntityDataClass($hlblock);
-    $rsData = $entity_data_class::getList(array(
-        'order' => array(),
-        'select' => array('*'),
-        'filter' => array()
+    $result = $entity_data_class::delete($btn);
+    echo '<span style="color:rgb(58, 150, 64);">∅ Добавить в чёрный список</span>';
+}else{
+    $entity_data_class = GetEntityDataClass($hlblock);
+    $result = $entity_data_class::add(array(
+        'UF_ELEMENT' => $id,
     ));
-    while($el = $rsData->fetch()){
-        $ElementID = $el['ID'];
-        $ProductID = $el['UF_ELEMENT'];
-    }
-    if(!$btn == 0){
-        $entity_data_class = GetEntityDataClass($hlblock);
-        $result = $entity_data_class::delete($ElementID);
-        echo '<span style="color:rgb(58, 150, 64);">∅ Добавить в чёрный список</span>';
-    }else{
-        $entity_data_class = GetEntityDataClass($hlblock);
-        $result = $entity_data_class::add(array(
-            'UF_ELEMENT' => $id,
-        ));
-        echo '<span style="color:rgb(255, 0, 1);">∅ Удалить из чёрного списка</span>';
-    }?>
+    echo '<span style="color:rgb(255, 0, 1);">∅ Удалить из чёрного списка</span>';
+}?>
