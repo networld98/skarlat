@@ -1,7 +1,7 @@
 <?
 $aMenuLinks = Array(
     Array(
-        "UAE | Dubai",
+        "ОАЕ | Дубай",
         "",
         Array(),
         Array(),

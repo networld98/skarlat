@@ -1,9 +1,9 @@
 <p>
-	 We work on various projects in our design studio, offering fresh ideas and innovative solutions. We are constantly evolving and striving to create diverse projects because we must be creative and produce high-quality work.
+	 Світильники, люстри, торшери та бра – це не просто освітлення, а ключ до створення затишної атмосфери в будь-якому просторі. Ми розуміємо це як ніхто інший, адже вже понад 15 років спеціалізуємося на освітлювальних приладах.
 </p>
 <p>
-	 We are actively engaged in projects in Europe and the UAE, where we implement cutting-edge ideas and innovative concepts in the field of design. Creativity and a fresh perspective are highly valued by us. There are no limits to your imagination here - together, we can create something unique and inspiring.
+	 Наша місія – дарувати світло та створювати комфорт у ваших оселях, офісах чи на присадибних ділянках. Ми завжди в курсі нових трендів і збираємо у нашому каталозі найактуальніші моделі від провідних світових брендів. У нас ви знайдете широкий вибір освітлювальних рішень – від вбудованих світильників до стильних варіантів для вулиці.
 </p>
 <p>
-	 Skarlat Design Hub, we values collaboration and collective creativity. Our projects bring together designers and architects to create stunning works. We are always at the forefront of design trends and constantly strive for innovation.
+	Ми піклуємося про наших клієнтів і завжди пропонуємо найкращі умови. В інтернет-магазині діє система лояльності з сезонними знижками та акційними пропозиціями. Якщо ви не можете визначитися з вибором або маєте запитання, наші менеджери завжди готові допомогти вам знайти ідеальне рішення для будь-якого простору.
 </p>

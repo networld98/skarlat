@@ -1,10 +1,9 @@
-<p>Skarlat Design Hub is a global community uniting a multitude of creative designers. Our passion is to
-    create and bring unique ideas to life. We take pride in the diversity of our members, each of whom
-    brings their unique perspective and experience.</p>
-<p>We actively operate in Europe and the UAE, introducing
-    innovation and modern solutions to the world of design. Creativity is our core value, and there are no
-    limits to your imagination here.</p>
-<p>In Design Hub, we value collaboration and teamwork. We have projects
-    that bring together designers of various specializations to create amazing works collectively.
-    We are always at the forefront of design trends and strive for innovation. Our global presence opens up
-    unique worldwide opportunities for you.</p>
+<p>
+	 Компанія Skarlat рада запропонувати вам унікальні рішення в галузі освітлення. Ми спеціалізуємося на розробці та виробництві сучасних світильників, що поєднують стильний дизайн, передові технології та високу якість. Наші вироби допомагають створити комфортну і функціональну атмосферу у будь-яких приміщеннях.
+</p>
+<p>
+	 Ми пропонуємо індивідуальний підхід до кожного клієнта та широкий асортимент продукції, що відповідає всім сучасним стандартам якості й надійності.
+</p>
+<p>
+	 Співпрацюючи з Skarlat, ви отримуєте не тільки стильне і надійне освітлення, але й професійну підтримку на кожному етапі співпраці. Наші рішення орієнтовані на екологічність та енергоефективність, що робить їх вибіром для тих, хто цінує комфорт та турбується про навколишнє середовище.
+</p>

@@ -40,15 +40,13 @@ if ($arResult["isFormErrors"] == "Y"):?><?= $arResult["FORM_ERRORS_TEXT"]; ?><? 
                 <label class="button-upload">
             <?}?>
                 <?= $arQuestion["HTML_CODE"] ?>
-            <?if ($arQuestion['STRUCTURE'][0]['FIELD_TYPE'] == 'file') {?>
-                    upload any of your sketches and brief's that you think might be helpfull
-                </label>
+            <?if ($arQuestion['STRUCTURE'][0]['FIELD_TYPE'] == 'file') {?>Завантажте будь-які з ваших ескізів і брифів, які, на вашу думку, можуть бути корисними</label>
             <?}?>
             <?
         }
     } //endwhile
     ?>
-    <input type="submit" class="btn" name="web_form_apply" value="Send a message"/>
+    <input type="submit" class="btn" name="web_form_apply" value="Відправити"/>
     <?= $arResult["FORM_FOOTER"] ?>
     <?
 } //endif (isFormNote)

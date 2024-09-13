@@ -1,1 +1,2 @@
-<h2>Let’s<br>collaborate</h2>
+<h2>Отримати<br>
+умови</h2>

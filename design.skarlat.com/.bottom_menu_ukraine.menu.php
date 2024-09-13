@@ -1,7 +1,7 @@
 <?
 $aMenuLinks = Array(
 	Array(
-		"UKRAINE | Kyiv",
+		"Україна | Київ",
 		"",
 		Array(), 
 		Array(), 

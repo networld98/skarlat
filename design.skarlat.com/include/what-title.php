@@ -1,1 +1,2 @@
-<h2>What do we<br>offer</h2>
+<h2>Що ми<br>
+пропонуємо</h2>

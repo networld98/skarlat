@@ -1,7 +1,7 @@
 <?
 $aMenuLinks = Array(
 	Array(
-		"UK | Derby",
+		"Великобританія | Дербі",
 		"", 
 		Array(), 
 		Array(), 

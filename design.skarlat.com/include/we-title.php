@@ -1,1 +1,3 @@
-<h3>We help designers<br>& architects achieve their goals</h3>
+<h3>Skarlat – сучасні&nbsp;<br>
+ рішення для вашого простору</h3>
+ <br>
