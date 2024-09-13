@@ -1,1 +1,1 @@
-<h3>Every project made by<br>advanced team is created at the<br>intersection between design and technology</h3>
+<h3>Кожен проект, створений<br>намітною командою, народжується на<br>перехресті дизайну та технологій</h3>
